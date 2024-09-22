@@ -3,6 +3,7 @@ import 'package:intern_project/pages/HomePage.dart';
 import 'package:intern_project/pages/Profile%20Page.dart';
 import 'package:intern_project/pages/Store_Page.dart';
 import 'package:intern_project/pages/feed_page.dart';
+import 'package:intern_project/pages/profile/profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,6 +17,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -41,6 +43,6 @@ class _MainPageState extends State<MainPage> {
     Homepage() ,
     FeedPage(),
     StorePage(),
-    ProfilePage(),
+    ProfilePage(title: "Profile")
   ];
 }
