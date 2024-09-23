@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles/App_text.dart';
+import '../../../styles/App_text.dart';
 
 class PostItems extends StatelessWidget {
   final String user;
@@ -15,7 +15,7 @@ class PostItems extends StatelessWidget {
           Row(
             children: [
               Image.asset(
-                'assets/temp/Profile pic.jpg',
+                'assets/svg/feed',
                 height: 50,
                 width: 50,
               ),
@@ -31,7 +31,7 @@ class PostItems extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          Image.asset('assets/temp/news.png'),
+          Image.asset('assets/svg/home.png'),
           SizedBox(
             height: 12,
           ),
