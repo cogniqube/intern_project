@@ -4,7 +4,8 @@ import 'package:intern_project/pages/profile/customer_service.dart';
 import 'package:intern_project/pages/profile/notification.dart';
 import 'package:intern_project/pages/profile/profle.dart';
 import 'package:intern_project/pages/profile/service_info.dart';
-import 'package:intern_project/pages/profile/shoppinginfo.dart'; 
+import 'package:intern_project/pages/profile/shoppinginfo.dart';
+import 'package:intern_project/styles/app_colors.dart'; 
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key, required this.title});
@@ -49,6 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         style: TextStyle(
                           fontSize: 24.0,
                           fontWeight: FontWeight.bold,
+                          color: AppColors.black,
                         ),
                       ),
                       Text(

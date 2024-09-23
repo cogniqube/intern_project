@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:intern_project/pages/Profile%20Page.dart';
+import 'package:flutter/material.dart'; 
 import 'package:intern_project/pages/profile/profile_page.dart'; 
 
 class CelebrityApplication extends StatefulWidget {

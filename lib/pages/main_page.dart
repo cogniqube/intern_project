@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intern_project/pages/HomePage.dart';
-import 'package:intern_project/pages/Profile%20Page.dart';
+import 'package:intern_project/pages/HomePage.dart'; 
 import 'package:intern_project/pages/Store_Page.dart';
 import 'package:intern_project/pages/feed_page.dart';
 import 'package:intern_project/pages/profile/profile_page.dart';

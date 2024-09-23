@@ -41,7 +41,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   void _changePassword() {
      Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) =>   Password()),
+      MaterialPageRoute(builder: (context) =>   ResetPassword()),
     );
   }
 
