@@ -406,6 +406,7 @@ class _BroadCastReservationState extends State<BroadCastReservation> {
     }
   }
 
+  @override
   void dispose() {
     _dateController.dispose();
     _textController.dispose(); // Dispose controller when not needed
