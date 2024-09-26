@@ -1,17 +1,18 @@
 import 'dart:async';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:intern_project/pages/Home/previewScreen.dart';
+import 'package:intern_project/pages/Home/productScreen.dart';
+import 'package:intern_project/pages/Home/storedGoods.dart';
 import 'package:intl/intl.dart'; // For formatting dates
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:intern_project/cartScreen.dart';
-import 'package:intern_project/previewScreen.dart';
-import 'package:intern_project/productScreen.dart';
-import 'package:intern_project/textStyles.dart';
-import 'appColors.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:ui';
 
+import '../../styles/App_text.dart';
+import '../../styles/app_colors.dart';
 import 'broadCastReservation.dart';
+
 
 class Celebrityscreen extends StatefulWidget {
   @override
@@ -383,7 +384,7 @@ class _CelebrityscreenState extends State<Celebrityscreen> {
           ),
           onPressed: () {Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>  BroadcastReservation()),
+            MaterialPageRoute(builder: (context) =>  BroadCastReservation()),
           );},
         ),
 
@@ -1314,6 +1315,7 @@ class _CelebrityscreenState extends State<Celebrityscreen> {
     );
   }
 }
+
 
 Widget _buildHashtagContainer(String hashtag) {
   return Container(

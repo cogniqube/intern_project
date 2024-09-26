@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intern_project/productScreen.dart';
+import 'package:intern_project/pages/Home/productScreen.dart';
 
-import 'appColors.dart';
+import '../../styles/app_colors.dart';
 
 class StoredGoods extends StatefulWidget {
   @override

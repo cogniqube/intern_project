@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
-import 'appColors.dart';
+import '../../styles/app_colors.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   @override

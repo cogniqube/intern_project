@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../styles/app_colors.dart';
-import 'cartScreen.dart';
+import 'storedGoods.dart';
 
 class ProductListScreen extends StatefulWidget {
   @override
