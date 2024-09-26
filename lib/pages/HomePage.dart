@@ -1,15 +1,16 @@
 import 'dart:async';
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:intl/intl.dart'; // For formatting dates
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:intern_project/pages/Home/cartScreen.dart';
+import 'package:intern_project/pages/Home/storedGoods.dart';
 import 'package:intern_project/pages/Home/previewScreen.dart';
 import 'package:intern_project/pages/Home/productScreen.dart';
-import 'package:intern_project/textStyles.dart';
+import '../styles/App_text.dart';
 import '../styles/app_colors.dart';
 import 'package:intern_project/styles/app_colors.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:ui';
 
 class HomePage extends StatefulWidget {
