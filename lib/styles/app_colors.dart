@@ -11,6 +11,7 @@ class AppColors{
   static const white = Color(0xffffffff);
   static const black = Color(0xff000000);
   static const appbar = Color(0xfff5f1f1);
+  static const tabBar = Color(0xFFF5F5F5);
   static const sponsor = Color(0xFFF2B705);
   static const orange=Color(0xFFE63100);
   static const purple=Color(0xFF693ACC);
