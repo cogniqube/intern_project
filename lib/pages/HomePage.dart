@@ -10,7 +10,6 @@ import 'package:intern_project/pages/Home/previewScreen.dart';
 import 'package:intern_project/pages/Home/productScreen.dart';
 import '../styles/App_text.dart';
 import '../styles/app_colors.dart';
-import 'package:intern_project/styles/app_colors.dart';
 import 'dart:ui';
 
 class HomePage extends StatefulWidget {
