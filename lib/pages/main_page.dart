@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   final pages = [
-    Homepage() ,
+    HomePage() ,
     FeedPage(),
     StorePage(),
     ProfilePage(title: "Profile")
