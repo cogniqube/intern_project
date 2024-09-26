@@ -304,7 +304,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
     overlayState.insert(overlayEntry);
 
     // Remove the overlay after 2 seconds
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () {
       overlayEntry.remove();
     });
   }

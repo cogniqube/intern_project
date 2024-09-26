@@ -66,7 +66,7 @@ class _StoredGoodsState extends State<StoredGoods> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "The prize I have been stored",
           style: TextStyle(color: AppColors.font, fontSize: 16),
         ),
