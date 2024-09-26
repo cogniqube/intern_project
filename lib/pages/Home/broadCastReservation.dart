@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:routine/appColors.dart';
-import 'package:routine/productScreen.dart';
+import 'package:intern_project/styles/app_colors.dart';
+import 'package:intern_project/pages/Home/productScreen.dart';
+
+import '../../styles/app_colors.dart';
 
 class BroadCastReservation extends StatefulWidget {
   const BroadCastReservation({super.key});
@@ -14,7 +16,7 @@ class _BroadCastReservationState extends State<BroadCastReservation> {
 
   int _quizProgress = 1; // Default selection
   String? selectedTime = "00:00";
-  Color _textColor = AppColors.lightorange; // Initial text color (before selection)
+  Color _textColor = AppColors.primary; // Initial text color (before selection)
   TextEditingController _timeController = TextEditingController(); // Controller for the Time TextField
   TextEditingController _textController = TextEditingController(); // Controller for the Broadcast Name TextField
   TextEditingController _dateController = TextEditingController();
@@ -132,19 +134,19 @@ class _BroadCastReservationState extends State<BroadCastReservation> {
                           style: TextStyle(color: AppColors.font, fontSize: 12)),
                       SizedBox(height: 10),
                       Text("Required: Name of the show, scheduled",
-                          style: TextStyle(color: AppColors.red,
+                          style: TextStyle(color: AppColors.primary,
                               fontSize: 12)),
                       Text("date of the show, and whether to proceed",
-                          style: TextStyle(color: AppColors.red,
+                          style: TextStyle(color: AppColors.primary,
                               fontSize: 12)),
                       Text("with the quiz.",
-                          style: TextStyle(color: AppColors.red,
+                          style: TextStyle(color: AppColors.primary,
                               fontSize: 12)),
                       Text("Choice: Live preview video and image,",
-                          style: TextStyle(color: AppColors.red,
+                          style: TextStyle(color: AppColors.primary,
                               fontSize: 12)),
                       Text("Choose a product to sell.",
-                          style: TextStyle(color: AppColors.red,
+                          style: TextStyle(color: AppColors.primary,
                               fontSize: 12)),
                     ],
                   ),

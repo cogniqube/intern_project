@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:routine/appColors.dart';
-import 'package:routine/videoPlayerScreen.dart';
+import 'package:intern_project/appColors.dart';
+import 'package:intern_project/videoPlayerScreen.dart';
 
 class PreviewScreen extends StatefulWidget {
   @override

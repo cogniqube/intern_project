@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intern_project/pages/Login/splash.dart';
 import 'package:intern_project/pages/Test_page.dart';
-import 'package:intern_project/pages/feed_page.dart'; 
+import '';
+import 'package:intern_project/pages/Feed/feed_page.dart';
+import 'package:intern_project/pages/Login/login.dart';
 import 'package:intern_project/pages/main_page.dart';
 import 'package:intern_project/styles/App_text.dart';
 import 'package:intern_project/styles/app_colors.dart';
@@ -14,7 +15,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: 'Urbanist',
           scaffoldBackgroundColor: AppColors.background,
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             foregroundColor: Colors.white,
             elevation: 4,
             centerTitle: false,
-            titleTextStyle: AppText.header1,
+            titleTextStyle: AppText.appBar,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(30),
@@ -34,13 +34,13 @@ class MyApp extends StatelessWidget {
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
             backgroundColor: AppColors.background,
             selectedItemColor: AppColors.primary,
-            unselectedItemColor: AppColors.black,
+            unselectedItemColor: AppColors.unselectedButton,
           ),
         ),
         //home: loginPage(),
         initialRoute: '/',
         routes:{
-          '/': (context) => Splash(),
+          '/': (context) => LoginScreen(),
           '/feed': (context) => FeedPage(),
           '/main': (context) => MainPage()
     },

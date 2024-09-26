@@ -3,10 +3,10 @@ import 'package:intl/intl.dart'; // For formatting dates
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:routine/cartScreen.dart';
-import 'package:routine/previewScreen.dart';
-import 'package:routine/productScreen.dart';
-import 'package:routine/textStyles.dart';
+import 'package:intern_project/cartScreen.dart';
+import 'package:intern_project/previewScreen.dart';
+import 'package:intern_project/productScreen.dart';
+import 'package:intern_project/textStyles.dart';
 import 'appColors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:ui';

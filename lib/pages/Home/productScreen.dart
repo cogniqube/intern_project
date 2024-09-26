@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'appColors.dart';
+import '../../styles/app_colors.dart';
 import 'cartScreen.dart';
 
 class ProductListScreen extends StatefulWidget {

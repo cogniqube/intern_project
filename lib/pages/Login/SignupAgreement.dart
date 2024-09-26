@@ -72,7 +72,7 @@ class _TermsAndConditionsScreenState
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Text(
-                      'Routine Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.\n\nRoutine Live collects essential items essential to perform',
+                      'intern_project Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.\n\nintern_project Live collects essential items essential to perform',
                       textAlign: TextAlign.justify,
                     ),
                   ),

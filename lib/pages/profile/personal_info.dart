@@ -32,11 +32,11 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
+                'intern_project Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
+                'intern_project Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
               ),
               const SizedBox(height: 32),
               Text(
@@ -45,11 +45,11 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
+                'intern_project Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
+                'intern_project Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
               ),
               const SizedBox(height: 32),
               Text(
@@ -58,11 +58,11 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
+                'intern_project Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
+                'intern_project Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
               ),
               const SizedBox(height: 32),
               Text(
@@ -71,11 +71,11 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
+                'intern_project Live collects the minimum amount of personal information necessary for contract implementation, user identification, service improvement, new service development, membership registration, and counseling on service provision.',
               ),
               const SizedBox(height: 16),
               const Text(
-                'Routine Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
+                'intern_project Live collects essential items essential to perform the essential functions of the service and options for providing more specialized services with the prior consent of the user.',
               ),
             ],
           ),
