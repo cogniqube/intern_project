@@ -12,5 +12,10 @@ class AppColors{
   static const black = Color(0xff000000);
   static const appbar = Color(0xfff5f1f1);
   static const sponsor = Color(0xFFF2B705);
-
+  static const orange=Color(0xFFE63100);
+  static const purple=Color(0xFF693ACC);
+  static const grey=Color(0xff979797);
+  static const red=Color(0xffE64646);
+  static const blue=Color(0xff3F8AE0);
+  static const lightorange=Color(0x4DE66100);
 }
