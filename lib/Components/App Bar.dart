@@ -11,7 +11,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       {super.key,
       required this.title,
       this.actions,
-      required this.automaticallyImplyLeading});
+      required this.automaticallyImplyLeading, required IconButton leading});
 
   @override
   Widget build(BuildContext context) {

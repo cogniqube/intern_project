@@ -42,7 +42,7 @@ class _TermsAndConditionsScreenState
                     _agreedToTerms = value ?? false;
                   });
                 },
-                title: const Text('All agreements to the terms and conditions'),
+                title: const Text('All agreements to the terms and conditions',style: TextStyle(color: Colors.black),),
                 controlAffinity: ListTileControlAffinity.leading,
               ),
               const SizedBox(height: 16.0),

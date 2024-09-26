@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intern_project/pages/Feed/feed_page.dart';
 import 'package:intern_project/pages/Login/splash.dart';
-import 'package:intern_project/pages/Test_page.dart';
-import 'package:intern_project/pages/feed_page.dart'; 
+import 'package:intern_project/pages/Test_page.dart'; 
 import 'package:intern_project/pages/main_page.dart';
 import 'package:intern_project/styles/App_text.dart';
 import 'package:intern_project/styles/app_colors.dart';

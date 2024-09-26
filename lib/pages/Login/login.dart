@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/main.dart';
 import 'package:intern_project/pages/Login/SignupEmail.dart';
-import 'package:intern_project/pages/main_page.dart'; 
-
+import 'package:intern_project/pages/main_page.dart';
+import 'package:intern_project/pages/profile/terms.dart';
+import 'package:intern_project/styles/gradient_button.dart'; 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -24,14 +25,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 20),
 
               // App Title (in Korean)
-              const Text(
-                '루틴라이브',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.orange,
-                ),
-              ),
+              
               const SizedBox(height: 20),
 
               // Email Input Field
@@ -65,23 +59,15 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // Log In Button
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 100),
-                  backgroundColor: Colors.orange,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
+              // Replace ElevatedButton with GradientButton
+              GradientButton(
+                text: 'Log In',
                 onPressed: () {
                   // Handle login logic
                   Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => MainPage() ), // Replace with your LoginScreen widget
-              );
+                    MaterialPageRoute(builder: (context) => MainPage()),
+                  );
                 },
-                child: const Text('log in'),
               ),
               const SizedBox(height: 10),
 
@@ -116,9 +102,9 @@ class LoginScreen extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   // Handle registration logic
-                   Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => SignUpPage() ), // Replace with your LoginScreen widget
-              );
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => TermsAndConditionsScreen()),
+                  );
                 },
                 child: const Text(
                   'Do you need general membership registration?',
