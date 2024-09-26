@@ -19,5 +19,6 @@ class AppColors{
   static const blue=Color(0xff3F8AE0);
   static const lightorange=Color(0x4DE66100);
   static const tabBar = Color(0xFFF5F5F5);
+  static const followButton = Color(0xFF693ACC);
 
 }
