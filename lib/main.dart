@@ -25,11 +25,6 @@ class MyApp extends StatelessWidget {
             elevation: 4,
             centerTitle: false,
             titleTextStyle: AppText.appBar,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(30),
-              ),
-            ),
           ),
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
             backgroundColor: AppColors.background,
