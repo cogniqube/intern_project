@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/styles/app_colors.dart';
-import '../styles/App_text.dart';
+import '../styles/app_text.dart'; // Updated to lowercase for consistency
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -8,21 +8,22 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final bool automaticallyImplyLeading;
 
-  const MyAppBar(
-      {super.key,
-      required this.title,
-//       this.actions,
-// <<<<<<< HEAD
-//       required this.automaticallyImplyLeading, required IconButton leading});
-// =======
-//       required this.automaticallyImplyLeading, required this.leading});
-// >>>>>>> 600b800260655c6593a2b9e325359cdbda09277c
+  const MyAppBar({
+    Key? key,
+    required this.title,
+    required this.leading,
+    this.actions,
+    this.automaticallyImplyLeading = true, // Default value added for flexibility
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leading: leading,
-      title: Text(title, style: AppText.appBar.copyWith(color: AppColors.black)),
+      title: Text(
+        title,
+        style: AppText.appBar.copyWith(color: AppColors.black),
+      ),
       foregroundColor: AppColors.black,
       actions: actions,
       centerTitle: true,
@@ -31,6 +32,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(44);
+  Size get preferredSize => const Size.fromHeight(44); // Height of the AppBar
 }

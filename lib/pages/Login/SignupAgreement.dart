@@ -19,15 +19,17 @@ class _TermsAndConditionsScreenState
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back,color: Colors.black,),
           onPressed: () {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) =>  LoginScreen()), // Replace with your LoginScreen widget
-              );
+             Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
           },
         ),
-        title: const Text('Terms and conditions'),
+        title: const Text(''),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(

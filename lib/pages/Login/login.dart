@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
             children: <Widget>[
               // App Logo
               Image.asset(
-                'assets/logo.png', // Replace with your actual logo asset path
+                'assets/profile/logo.png', // Replace with your actual logo asset path
                 height: 100,
               ),
               const SizedBox(height: 20),
@@ -87,13 +87,13 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  _buildSocialMediaButton('assets/1.png'), // Kakao
+                  _buildSocialMediaButton('assets/profile/1.png'), // Kakao
                   const SizedBox(width: 10),
-                  _buildSocialMediaButton('assets/2.png'), // Naver
+                  _buildSocialMediaButton('assets/profile/2.png'), // Naver
                   const SizedBox(width: 10),
-                  _buildSocialMediaButton('assets/3.png'), // Google
+                  _buildSocialMediaButton('assets/profile/3.png'), // Google
                   const SizedBox(width: 10),
-                  _buildSocialMediaButton('assets/4.png'), // Apple
+                  _buildSocialMediaButton('assets/profile/4.png'), // Apple
                 ],
               ),
               const SizedBox(height: 20),

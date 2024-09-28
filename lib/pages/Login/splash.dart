@@ -29,7 +29,7 @@ class _SplashState extends State<Splash> {
       backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
-          'assets/logo.png',  // Make sure to add your logo image in the assets folder
+          'assets/profile/logo.png',  // Make sure to add your logo image in the assets folder
           width: 150,
           height: 150,
         ),

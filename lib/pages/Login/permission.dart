@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intern_project/pages/Login/SignupAgreement.dart';
 import 'package:intern_project/pages/Login/SignupEmail.dart';
 import 'package:intern_project/pages/Login/login.dart';
 import 'package:intern_project/styles/gradient_button.dart';  
@@ -109,7 +110,7 @@ class AppAccessPermissionGuide extends StatelessWidget {
               text: 'Confirm',
               onPressed: () {
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const SignUpPage()),
+                  MaterialPageRoute(builder: (context) => const TermsAndConditionsScreen()),
                 );
               },
             ),
