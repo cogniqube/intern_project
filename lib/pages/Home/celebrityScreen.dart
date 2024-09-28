@@ -1,23 +1,25 @@
 import 'dart:async';
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:intern_project/pages/Home/previewScreen.dart';
+import 'package:intern_project/pages/Home/productScreen.dart';
+import 'package:intern_project/pages/Home/storedGoods.dart';
 import 'package:intl/intl.dart'; // For formatting dates
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:intern_project/pages/Home/storedGoods.dart';
-import 'package:intern_project/pages/Home/previewScreen.dart';
-import 'package:intern_project/pages/Home/productScreen.dart';
-import '../styles/App_text.dart';
-import '../styles/app_colors.dart';
 import 'dart:ui';
 
-class HomePage extends StatefulWidget {
+import '../../styles/App_text.dart';
+import '../../styles/app_colors.dart';
+import 'broadCastReservation.dart';
+
+
+class Celebrityscreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _CelebrityscreenState createState() => _CelebrityscreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CelebrityscreenState extends State<Celebrityscreen> {
   int activeIndex = 0;
   int _selectedIndex = 0;
   List<bool> isFollowingList = [false, false, false];
@@ -30,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   bool isEventActive = true;
   bool isRinging = false;
   Timer? _timer;
-  DateTime eventTime = DateTime.now().add(Duration(hours: 4));
+  DateTime eventTime = DateTime.now().add(Duration());
   String displayMessage = "";
 
   bool hasAskedPermission = false;
@@ -87,7 +89,7 @@ class _HomePageState extends State<HomePage> {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       backgroundColor: Colors.blueGrey,
-      textColor: Colors.white,
+      textColor: AppColors.background,
       fontSize: 12.0,
     );
 
@@ -96,8 +98,8 @@ class _HomePageState extends State<HomePage> {
         msg: "Notification $tick: $message",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.TOP,
-        backgroundColor: Colors.blueGrey,
-        textColor: Colors.white,
+        backgroundColor: AppColors.grey,
+        textColor: AppColors.background,
         fontSize: 12.0,
       );
     }
@@ -144,6 +146,7 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0,
+                color: AppColors.font,
               ),
             ),
           ),
@@ -161,7 +164,8 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               child: Text(
                 'not allowed',
-                style: TextStyle(color: Colors.red, fontSize: 14.0),
+                style: TextStyle(color: AppColors.red,
+                    fontSize: 14.0),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -173,7 +177,7 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               child: Text(
                 'Permit',
-                style: TextStyle(color: Colors.blue, fontSize: 14.0),
+                style: TextStyle(color: AppColors.blue, fontSize: 14.0),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -190,13 +194,12 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (BuildContext context) {
         return Dialog(
-          insetPadding: EdgeInsets.only(top: 20,bottom: 20,left: 10),
+          insetPadding: EdgeInsets.only(top: 20,left: 10),
           shape: RoundedRectangleBorder(
             // borderRadius: BorderRadius.circular(10),
           ),
           child: Container(
             width: double.infinity,
-            // width: MediaQuery.of(context).size.width * 0.9, // 80% of the screen width
             padding: EdgeInsets.all(12),
             height: MediaQuery.of(context).size.height*0.4, // Adjust height as per requirement
 
@@ -209,59 +212,70 @@ class _HomePageState extends State<HomePage> {
                     Text(
                       "OneQ Studio Co., Ltd.",
                       style: TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                          fontSize: 16,
+                          color: AppColors.font,
+                          fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 50,),
-                    Text("View bussiness\nInformation",style: TextStyle(fontSize: 8),)
+                    Text("View bussiness\nInformation",
+                      style: TextStyle(fontSize: 8,
+                          color: AppColors.font),)
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
                 Container(
-                  //color: Colors.pink,
                   padding: EdgeInsets.only(left: 10),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Ceo",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("Company Registration\nNumber",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("Mail-order bussines\nreport",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("Adress",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("Main Phone",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("Email",style: TextStyle(fontSize: 10),),
+                          Text("Ceo",style: TextStyle(fontSize: 10,
+                              color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("Company Registration\nNumber",style: TextStyle(
+                              fontSize: 10,color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("Mail-order bussines\nreport",style: TextStyle(
+                              fontSize: 10,color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("Adress",style: TextStyle(fontSize: 10,color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("Main Phone",style: TextStyle(fontSize: 10,
+                              color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("Email",style: TextStyle(fontSize: 10,
+                              color: AppColors.font),),
                         ],
                       ),
-                      SizedBox(width: 25), // Add spacing between columns
+                      SizedBox(width: MediaQuery.of(context).size.width*0.04), // Add spacing between columns
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment:MainAxisAlignment.start,
                         children: [
-                          Text("tea Tour",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("466-88-908763\n",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("2020,Location Information-Join Number\n2nd Floor, 204, Seocho dearo 50-gil.",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("Seocho-gu, Seoul",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("15XX-XXXX",style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
-                          Text("help@onecue.co",style: TextStyle(fontSize: 10),),
+                          Text("tea Tour",style: TextStyle(fontSize: 10,
+                              color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("466-88-908763\n",style: TextStyle(fontSize: 10,
+                              color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("2020,Location Information-Join Number\n2nd Floor, 204, Seocho dearo 50-gil.",
+                            style: TextStyle(fontSize: 10,color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("Seocho-gu, Seoul",style: TextStyle(
+                              color: AppColors.font,fontSize: 10),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("15XX-XXXX",style: TextStyle(fontSize: 10,color: AppColors.font),),
+                          SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                          Text("help@onecue.co",style: TextStyle(fontSize: 10,color: AppColors.font),),
                         ],
                       ),
                     ],
                   ),
                 ),
 
-                SizedBox(height: 10,),// Pushes buttons to the bottom
+                SizedBox(height: MediaQuery.of(context).size.height*0.01,),// Pushes buttons to the bottom
                 Padding(
                   padding: const EdgeInsets.only(left: 15,right: 20),
                   child: Row(
@@ -271,13 +285,15 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           // Add action for Terms of Use
                         },
-                        child: Text("Terms of Use"),
+                        child: Text("Terms of Use",
+                          style: TextStyle(color: AppColors.purple,fontSize:12),),
                       ),
                       TextButton(
                         onPressed: () {
                           // Add action for Privacy Policy
                         },
-                        child: Text("Privacy Policy"),
+                        child: Text("Privacy Policy",
+                            style: TextStyle(color: AppColors.purple,fontSize:12)),
                       ),
                     ],
                   ),
@@ -289,7 +305,52 @@ class _HomePageState extends State<HomePage> {
       },
     );
   }
-
+  void _showReservationDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.only(top: 20, bottom: 5, left: 10, right: 10),
+            height: MediaQuery.of(context).size.height * 0.3,
+            width: MediaQuery.of(context).size.width * 0.7,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("This is not the scheduled\nbroadcast time.",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.font
+                  ),
+                  textAlign: TextAlign.center,),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Text("It can be broadcast from 10 minutes\nbefore the schedule time",
+                        textAlign:TextAlign.center,
+                        style: TextStyle(color: AppColors.grey,
+                            fontSize: 14)),
+                  ],
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height*0.02,),
+                Divider(),
+                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+                GestureDetector(
+                  onTap: () => Navigator.of(context).pop(),
+                  child: Text("Confirm", style: TextStyle(
+                      fontSize: 14, color: AppColors.font)),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
   @override
   void dispose() {
     _timer?.cancel();
@@ -314,6 +375,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+
+        leading:  IconButton(
+          icon: Icon(
+              Icons.switch_video_outlined,
+              color: AppColors.font,
+              size: 20
+          ),
+          onPressed: () {Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>  BroadCastReservation()),
+          );},
+        ),
+
         title: Center(
           child: Text(
             '루틴라이브',
@@ -329,6 +403,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(
               Icons.shopping_cart_outlined,
               color: AppColors.font,
+              size: 20,
             ),
             onPressed: () {Navigator.push(
               context,
@@ -487,16 +562,33 @@ class _HomePageState extends State<HomePage> {
                       ),
                       // Main Content
 
+                      ElevatedButton(
+                        onPressed: _showReservationDialog,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xff693ACC),
+                          minimumSize: Size(
+                              double.infinity,
+                              height*0.06),
+                          shape: RoundedRectangleBorder(),
+                        ),
+                        child: const Text(
+                          "Live reservation request",
+                          style: TextStyle(fontFamily: "NotoSans",
+                              color: AppColors.background, fontSize: 14),
+                        ),
+                      ),
+
                       SizedBox(height: height * 0.02),
                       // Recommended Products Section
                       Text(
-                        'Recommended product',
+                        'Schedule Live',
                         style: TextStyle(
                           fontSize: 18,
                           color: AppColors.font,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+
                     ],),
                 ),
 
@@ -504,20 +596,19 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 12),
                   child: SizedBox(
-                    height: height * 0.32,
+                    height: height*0.22,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        productCard('Running shoes', '39,000 won', '10%',
-                            'assets/images/1.png'),
-                        productCard('Driver golf club', '589,000 won', '20%',
-                            'assets/images/1.png'),
-                        productCard('Driver golf club', '589,000 won', '20%',
-                            'assets/images/1.png'),
+                        SliveShowCard("Catch Oil\nCatch me","Catch ball"),
+                        SliveShowCard("Hit","archery"),
+                        SliveShowCard("Be ready","billiards"),
+
                       ],
                     ),
                   ),
                 ),
+
                 SizedBox(
                   height: height * 0.02,
                 ),
@@ -529,7 +620,7 @@ class _HomePageState extends State<HomePage> {
                       OutlinedButton(
                         onPressed: () {Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ProductListScreen()),
+                          MaterialPageRoute(builder: (context) => PreviewScreen()),
                         );},
                         style: OutlinedButton.styleFrom(
                           side: BorderSide(
@@ -541,8 +632,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                         child: Center(
                           child: Text(
-                            'See more products',
-                            style: TextStyle(color: AppColors.primary), // Text color
+                            'Collecting previews',
+                            style: TextStyle(color: AppColors.primary,fontSize: 16), // Text color
                           ),
                         ),
                       ),
@@ -550,7 +641,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: height * 0.02),
                       // Scheduled Live Section
                       Text(
-                        'Schedule Live',
+                        'Play live',
                         style: TextStyle(
                           fontSize: 18,
                           color: AppColors.font,
@@ -569,9 +660,9 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        liveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","Catch ball"),
-                        liveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","archery"),
-                        liveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","billiards"),
+                        PliveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","Catch ball"),
+                        PliveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","archery"),
+                        PliveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","billiards"),
 
                       ],
                     ),
@@ -584,10 +675,6 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [OutlinedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PreviewScreen()),
-                        );
                         // Define what happens when the button is pressed
                       },
                       style: OutlinedButton.styleFrom(
@@ -600,15 +687,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: Center(
                         child: Text(
-                          'Collecting previews',
-                          style: TextStyle(color: AppColors.primary), // Text color
+                          'Watch more Shows',
+                          style: TextStyle(color: AppColors.primary,fontSize: 16), // Text color
                         ),
                       ),
                     ),
                       SizedBox(height: height * 0.02),
                       // Play Live Section
                       Text(
-                        'Play Live',
+                        'Recommended Products',
                         style: TextStyle(
                           fontSize: 18,
                           color: AppColors.font,
@@ -622,14 +709,16 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 12),
                   child: SizedBox(
-                    height: height*0.22,
+                    height: height * 0.32,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        liveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","Catch ball"),
-                        liveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","archery"),
-                        liveShowCard("Let’s catch the\ncatch ball. Let's\ncatch it together.","billiards"),
-
+                        productCard('Running shoes', '39,000 won', '10%',
+                            'assets/images/1.png'),
+                        productCard('Driver golf club', '589,000 won', '20%',
+                            'assets/images/1.png'),
+                        productCard('Driver golf club', '589,000 won', '20%',
+                            'assets/images/1.png'),
                       ],
                     ),
                   ),
@@ -639,7 +728,10 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: OutlinedButton(
                     onPressed: () {
-
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProductListScreen()),
+                      );
                       // Define what happens when the button is pressed
                     },
                     style: OutlinedButton.styleFrom(
@@ -652,8 +744,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Center(
                       child: Text(
-                        'Watch more Shows',
-                        style: TextStyle(color: AppColors.primary), // Text color
+                        'See more Products',
+                        style: TextStyle(color: AppColors.primary,fontSize: 16), // Text color
                       ),
                     ),
                   ),
@@ -684,6 +776,7 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
+
                 Positioned(
                   bottom: 10,
                   top: 100, // Adjust positioning
@@ -991,7 +1084,86 @@ class _HomePageState extends State<HomePage> {
   );
   }
 
-  Widget liveShowCard(String title,String subbox) {
+  Widget SliveShowCard(String title,String subbox) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 5),
+      child: Container(
+        width: MediaQuery.of(context).size.width*0.4,
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(0), // Optional: Adding rounded corners
+        ),
+        child: Stack(
+          children: [
+            // Background Image
+            Image.asset(
+              'assets/images/1.png',
+              height: MediaQuery.of(context).size.height*0.4,
+              // width: MediaQuery.of(context).size.width*0.4,
+              fit: BoxFit.fill, // Ensures the image covers the entire container
+            ),
+            // Title Text Positioned at the bottom
+            Positioned(
+              bottom: MediaQuery.of(context).size.height*0.03,
+              left: MediaQuery.of(context).size.width*0.04,
+              child: Container(
+                height: MediaQuery.of(context).size.height*0.12,
+                width: MediaQuery.of(context).size.height*0.17,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppColors.primary,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: AppColors.background, // Ensure it's visible over the image
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+                top: 5,
+                left: 5,
+                child: Row(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height*0.03,
+                      width: MediaQuery.of(context).size.width*0.18,
+                      child: Center(
+                        child: Text(
+                          "$subbox",
+                          style: TextStyle(
+                              fontSize: 10, color: AppColors.background),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColors.primary,
+                      ),
+                    ),
+                    SizedBox(width: MediaQuery.of(context).size.width*0.12),
+                    Icon(
+                      Icons.notifications_none_sharp,
+                      size: 20,color: AppColors.background,
+                      // Icons.notifications_active_outlined,
+                      // size: 20,color: AppColors.primary,
+                    )
+                  ],
+                ))
+            // Subtitle Text Positioned slightly above the bottom
+
+          ],
+        ),
+      ),
+    );
+  }
+  Widget PliveShowCard(String title,String subbox) {
     return Padding(
       padding: const EdgeInsets.only(right: 5),
       child: Container(
@@ -1143,6 +1315,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
 
 Widget _buildHashtagContainer(String hashtag) {
   return Container(

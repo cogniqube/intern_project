@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/pages/Feed/Feed_Components/User_List_View.dart';
+import 'package:intern_project/styles/app_colors.dart';
+import '../feed_styles/Custom_tab.dart';
 
 class TabBarPage extends StatefulWidget {
   final List<String> users;
@@ -17,6 +19,13 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+
+    // Add listener to update state when the tab changes
+    _tabController.addListener(() {
+      if (_tabController.indexIsChanging) {
+        setState(() {});
+      }
+    });
   }
 
   @override
@@ -30,30 +39,50 @@ class _TabBarPageState extends State<TabBarPage> with SingleTickerProviderStateM
     return Column(
       children: [
         Container(
-          height: 48, // Height of the TabBar
+          height: 48,
           decoration: BoxDecoration(
-            color: Colors.grey.shade200, // Background color of the TabBar
-            borderRadius: BorderRadius.circular(25), // Circular border for the container
+            color: AppColors.tabBar,
           ),
-          margin: EdgeInsets.symmetric(horizontal: 16), // Padding around TabBar
           child: TabBar(
             controller: _tabController,
-            labelColor: Colors.white, // Text color for selected tab
-            unselectedLabelColor: Colors.grey, // Text color for unselected tabs
-            indicator: BoxDecoration(
-              color: Colors.orange, // Background color for selected tab
-              borderRadius: BorderRadius.circular(25), // Rounded indicator for selected tab
-            ),
+            indicator: BoxDecoration(),
+            labelColor: Colors.transparent, // Hide the default label color
+            unselectedLabelColor: Colors.transparent, // Hide the default unselected color
             tabs: [
-              Tab(text: 'All'),
-              Tab(text: 'Following'),
-              Tab(text: 'Like'),
+              CustomTab(
+                text: 'All',
+                isSelected: _tabController.index == 0,
+                onTap: () {
+                  setState(() {
+                    _tabController.animateTo(0);
+                  });
+                },
+              ),
+              CustomTab(
+                text: 'Following',
+                isSelected: _tabController.index == 1,
+                onTap: () {
+                  setState(() {
+                    _tabController.animateTo(1);
+                  });
+                },
+              ),
+              CustomTab(
+                text: 'Like',
+                isSelected: _tabController.index == 2,
+                onTap: () {
+                  setState(() {
+                    _tabController.animateTo(2);
+                  });
+                },
+              ),
             ],
           ),
         ),
         Expanded(
           child: TabBarView(
             controller: _tabController,
+            physics: NeverScrollableScrollPhysics(), // Disable swipe gesture
             children: [
               UserListView(users: widget.users),
               Center(child: Text('Following Posts')),
