@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/main.dart';
+import 'package:intern_project/pages/Login/SignupAgreement.dart';
 import 'package:intern_project/pages/Login/SignupEmail.dart';
 import 'package:intern_project/pages/main_page.dart';
 import 'package:intern_project/pages/profile/terms.dart';
@@ -103,7 +104,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   // Handle registration logic
                   Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => TermsAndConditionsScreen()),
+                    MaterialPageRoute(builder: (context) => Signupagreement()),
                   );
                 },
                 child: const Text(

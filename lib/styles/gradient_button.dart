@@ -25,7 +25,7 @@ class GradientButton extends StatelessWidget {
         ),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 160, vertical: 15), backgroundColor: Colors.transparent, // Make button background transparent
+            padding: EdgeInsets.symmetric(horizontal: 160, vertical: 8), backgroundColor: Colors.transparent, // Make button background transparent
             shadowColor: Colors.transparent, // Remove button shadow
           ),
           onPressed: onPressed,
@@ -33,7 +33,8 @@ class GradientButton extends StatelessWidget {
             text,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 10,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

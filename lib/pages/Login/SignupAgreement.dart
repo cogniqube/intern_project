@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/pages/Login/SignupEmail.dart';
-import 'package:intern_project/pages/Login/login.dart'; 
-
-class TermsAndConditionsScreen extends StatefulWidget {
-  const TermsAndConditionsScreen({Key? key}) : super(key: key);
+import 'package:intern_project/pages/Login/login.dart';
+import 'package:intern_project/styles/gradient_button.dart';
+class Signupagreement extends StatefulWidget {
+  const Signupagreement({super.key});
 
   @override
-  _TermsAndConditionsScreenState createState() =>
-      _TermsAndConditionsScreenState();
+  State<Signupagreement> createState() => _SignupagreementState();
 }
 
-class _TermsAndConditionsScreenState
-    extends State<TermsAndConditionsScreen> {
+class _SignupagreementState extends State<Signupagreement> {
   bool _agreedToTerms = false;
 
   @override
@@ -21,14 +19,17 @@ class _TermsAndConditionsScreenState
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back,color: Colors.black,),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
           onPressed: () {
-             Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
-                    );
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LoginScreen()),
+            );
           },
         ),
-        title: const Text(''),
+        title: const Text('Terms and conditions'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -44,20 +45,45 @@ class _TermsAndConditionsScreenState
                     _agreedToTerms = value ?? false;
                   });
                 },
-                title: const Text('All agreements to the terms and conditions',style: TextStyle(color: Colors.black),),
-                controlAffinity: ListTileControlAffinity.leading,
+                title: const Text(
+                  'All agreements to the terms and conditions',
+                  style: TextStyle(color: Colors.orange),
+                  textAlign: TextAlign.right,
+                ),
+                controlAffinity: ListTileControlAffinity.trailing,
+                checkColor: Colors.orange,
               ),
               const SizedBox(height: 16.0),
-              const Text(
-                'Terms and conditions',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                ),
+
+              // Terms and conditions title with dynamic icon
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Personal information collection',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      backgroundColor: Colors.orange,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Icon(
+                    Icons.check_circle,
+                    color: _agreedToTerms ? Colors.orange : Colors.grey,
+                    size: 24.0,
+                  ),
+                ],
               ),
               const SizedBox(height: 8.0),
               const ExpansionTile(
-                title: Text('Article 1 (Purpose)'),
+                title: Text(
+                  'Article 1 (Purpose)',
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+                iconColor: Colors.orange, // Color when expanded
+                collapsedIconColor: Colors.orange, // Color when collapsed
                 children: [
                   Padding(
                     padding: EdgeInsets.all(16.0),
@@ -68,8 +94,36 @@ class _TermsAndConditionsScreenState
                   ),
                 ],
               ),
+              const SizedBox(height: 16.0),
+
+              // Personal Information Collection title with dynamic icon
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Personal information collection',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      backgroundColor: Colors.orange,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Icon(
+                    Icons.check_circle,
+                    color: _agreedToTerms ? Colors.orange : Colors.grey,
+                    size: 24.0,
+                  ),
+                ],
+              ),
               const ExpansionTile(
-                title: Text('personal information collection'),
+                title: Text(
+                  'Personal information collection',
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+                iconColor: Colors.orange, // Color when expanded
+                collapsedIconColor: Colors.orange, // Color when collapsed
                 children: [
                   Padding(
                     padding: EdgeInsets.all(16.0),
@@ -81,17 +135,18 @@ class _TermsAndConditionsScreenState
                 ],
               ),
               const SizedBox(height: 32.0),
+
+              // Gradient button
               Center(
-                child: ElevatedButton(
-                  onPressed: _agreedToTerms
-                      ? () {
-                          Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => SignUpPage()), // Replace with your LoginScreen widget
-              );
-                        }
-                      : null,
-                  child: const Text('Next'),
-                ),
+                child: GradientButton(
+              text: 'Next', 
+              onPressed: () { 
+                Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const SignUpPage()),
+            );
+               },
+              
+            ),
               ),
             ],
           ),

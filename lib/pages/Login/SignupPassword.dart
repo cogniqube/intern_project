@@ -91,7 +91,7 @@ class _SignupPasswordState extends State<SignupPassword> {
             ElevatedButton(
                 onPressed: () {
                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                      MaterialPageRoute(builder: (context) => SelfCertificationScreen()),
                     );
                 },
                 style: ElevatedButton.styleFrom(

@@ -110,7 +110,7 @@ class AppAccessPermissionGuide extends StatelessWidget {
               text: 'Confirm',
               onPressed: () {
                 Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const TermsAndConditionsScreen()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
             ),

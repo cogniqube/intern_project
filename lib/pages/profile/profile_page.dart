@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
         title: Text(widget.title),
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart,color: Colors.black,),
             onPressed: () {},
           ),
         ],
@@ -102,6 +102,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.normal,
+                        color: AppColors.black
                       ),
                     ),
                   ),
@@ -120,6 +121,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.normal,
+                        color: AppColors.black
                       ),
                     ),
                   ),
@@ -139,6 +141,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.normal,
+                        color: AppColors.black
                       ),
                     ),
                   ),
@@ -158,6 +161,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.normal,
+                        color: AppColors.black
                       ),
                     ),
                   ),
@@ -177,6 +181,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.normal,
+                        color: AppColors.black
                       ),
                     ),
                   ),

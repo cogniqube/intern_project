@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/pages/profile/password.dart';
 import 'package:intern_project/pages/profile/points.dart';
-import 'package:intern_project/pages/profile/referral.dart'; 
+import 'package:intern_project/pages/profile/referral.dart';
+import 'package:intern_project/styles/app_colors.dart'; 
  
 class EditProfileScreen extends StatefulWidget {
   @override
@@ -68,7 +69,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         title: const Text('Logout Successful'),
         content: const Text(
           'If you press "Logout", you will be taken to the login screen.',
-          style: TextStyle(fontSize: 12), // Smaller font for the message
+          style: TextStyle(fontSize: 12,color: AppColors.black), // Smaller font for the message
+          
         ),
         actions: [
           TextButton(

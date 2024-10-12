@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intern_project/pages/Login/SignupPassword.dart';
+import 'package:intern_project/pages/main_page.dart';
 import 'package:intern_project/pages/profile/profile_page.dart'; 
 class SelfCertificationScreen extends StatefulWidget {
   const SelfCertificationScreen({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _SelfCertificationScreenState extends State<SelfCertificationScreen> {
               ElevatedButton(
                 onPressed: () {
                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => ProfilePage(title: "Profile")),
+                      MaterialPageRoute(builder: (context) => MainPage()),
                     );
                 },
                 style: ElevatedButton.styleFrom(
